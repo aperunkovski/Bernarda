@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartmani Bernarda</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Apartmani <span>Bernarda</span></a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" data-i18n="nav_home">Početna</a>
+                <a href="#apartments" data-i18n="nav_apartments">Apartmani</a>
+                <a href="#footer" data-i18n="nav_contact">Kontakt</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="custom-lang-selector" id="langSelector">
+                    <div class="lang-selected" id="langCurrent">
+                        <img src="https://flagcdn.com/w20/hr.png" alt="HR"> <span>HR</span> <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <div class="lang-option" data-value="hr"><img src="https://flagcdn.com/w20/hr.png" alt="HR"> HR</div>
+                        <div class="lang-option" data-value="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN</div>
+                        <div class="lang-option" data-value="it"><img src="https://flagcdn.com/w20/it.png" alt="IT"> IT</div>
+                        <div class="lang-option" data-value="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> DE</div>
+                    </div>
+                </div>
+
+                <button class="burger-btn" id="burgerBtn" aria-label="Toggle menu">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section" style="background-image: linear-gradient(rgba(10, 25, 47, 0.55), rgba(10, 25, 47, 0.55)), url('img/Krk_krk.jpg');">
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">Dobrodošli u Apartmane Bernarda</h1>
+            <p data-i18n="hero_subtitle">Vaš savršen odmor na jadranskoj obali</p>
+            <a href="#apartments" class="btn btn-primary" data-i18n="hero_btn">Pogledajte Apartmane</a>
+        </div>
+    </section>
+
+   <section id="apartments" class="apartments-section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="ap_section_title">Naši Apartmani</h2>
+        
+        <div class="apartments-grid">
+            <div class="apartment-card">
+                <div class="card-img">
+                    <div class="badge-recommended" data-i18n="recommended">Favorit</div>
+                    <img src="img/apartman3.png" alt="Apartman Premium">
+                </div>
+                <div class="card-body">
+                    <h3 data-i18n="ap1_name">Premium Apartman</h3>
+                    <p class="capacity">
+                        <i class="fa-solid fa-users"></i> 
+                        <span data-i18n="capacity">Kapacitet</span>: 4
+                        <span data-i18n="persons">osobe</span>
+                    </p>
+                    <button class="btn btn-secondary open-details-btn" data-ap="1" data-i18n="btn_view">Pregledaj</button>
+                </div>
+            </div>
+
+            <div class="apartment-card">
+                <div class="card-img">
+                    <img src="img/comforthero.png" alt="Apartman Comfort">
+                </div>
+                <div class="card-body">
+                    <h3 data-i18n="ap2_name">Comfort Apartman</h3>
+                    <p class="capacity">
+                        <i class="fa-solid fa-users"></i> 
+                        <span data-i18n="capacity">Kapacitet</span>: 2 
+                        <span data-i18n="persons">osobe</span>
+                    </p>
+                    <button class="btn btn-secondary open-details-btn" data-ap="2" data-i18n="btn_view">Pregledaj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="modal" id="detailsModal">
+        <div class="modal-content large-modal">
+            <button class="close-modal">×</button>
+            
+            <div class="modal-grid">
+                <div class="modal-gallery">
+                    <div class="main-img-container">
+                        <img id="modalMainImg" src="" alt="Main View">
+                    </div>
+                    <div class="thumb-grid">
+                        <img class="thumb active" src="" alt="Thumb 1" onclick="changeModalImage(this)">
+                        <img class="thumb" src="" alt="Thumb 2" onclick="changeModalImage(this)">
+                        <img class="thumb" src="" alt="Thumb 3" onclick="changeModalImage(this)">
+                        <img class="thumb" src="" alt="Thumb 4" onclick="changeModalImage(this)">
+                    </div>
+                </div>
+
+                <div class="modal-info-side">
+                    <h3 id="modalApName">Ime Apartmana</h3>
+                    
+                    <div class="modal-meta">
+                        <div class="meta-item">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                            <div>
+                                <span class="meta-label" data-i18n="capacity">Kapacitet</span>
+                                <strong id="modalApCapacity">4 osobe</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="services-wrapper">
+                        <h4 data-i18n="services_label">Usluge i Sadržaji</h4>
+                        <div class="vector-services-grid" id="modalApServices"></div>
+                    </div>
+
+                    <button class="btn btn-primary" id="goToBookBtn" data-i18n="btn_book">Rezerviraj odmah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="bookModal">
+        <div class="modal-content contact-modal">
+            <button class="close-modal">×</button>
+            <h3 data-i18n="book_title">Rezervirajte Vaš Boravak</h3>
+            <p data-i18n="book_subtitle">Odaberite način na koji želite stupiti u kontakt s nama:</p>
+            
+            <div class="contact-options">
+                <a href="tel:+385915185288" class="contact-link phone"><i class="fa-solid fa-phone"></i> Phone Call</a>
+                <a href="sms:+385915185288" class="contact-link sms"><i class="fa-solid fa-comment-sms"></i> SMS Message</a>
+                <a href="https://wa.me/385915185288" target="_blank" class="contact-link whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="viber://chat?number=%2B385915185288" class="contact-link viber"><i class="fa-brands fa-viber"></i> Viber</a>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" class="footer">
+    <div class="container footer-grid">
+        
+        <div class="footer-info">
+            <h3>Apartmani <span>Bernarda</span></h3>
+            <p><i class="fa-solid fa-location-dot"></i> Ulica Krčkih iseljenika 10, 51500 Krk, Hrvatska</p>
+            <p><i class="fa-solid fa-phone"></i> +385 915185288</p>
+            
+            <div class="footer-social-chats">
+                <a href="https://wa.me/385915185288" target="_blank" class="chat-icon whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="viber://chat?number=%2B385915185288" class="chat-icon viber">
+                    <i class="fa-brands fa-viber"></i>
+                </a>
+                <a href="sms:+385915185288" class="chat-icon sms">
+                    <i class="fa-solid fa-comment-sms"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2813.2325996025175!2d14.568465076840784!3d45.02534576226162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4763a13d78278f99%3A0x6fb87c800bbfbfbd!2s51500%2C%20Krk!5e0!3m2!1shr!2shr!4v1718485000000!5m2!1shr!2shr" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+    </div>
+    
+    <div class="footer-bottom">
+        <p>
+            © 2026 Apartmani Bernarda. All rights reserved. 
+         <span> Designed by <a href="https://aperunkovski.dev/" target="_blank" class="designer-link">Atanasko Perunkovski</a> </span>  
+        </p>
+    </div>
+</footer>
+    
+<div id="lightboxModal" class="lightbox-modal">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-arrow prev-arrow">&#10094;</button>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Zoomed Image">
+    </div>
+    <button class="lightbox-arrow next-arrow">&#10095;</button>
+</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
