@@ -1,4 +1,4 @@
-// --- 1. ТРАНСЛАЦИИ ---
+
 const translations = {
     hr: {
         nav_home: "Početna", nav_apartments: "Apartmani", nav_contact: "Kontakt",
@@ -34,14 +34,14 @@ const translations = {
     }
 };
 
-// Проширени податоци за апартманите со ИДЕНТИЧНИ 6 УСЛУГИ НА СИТЕ ЈАЗИЦИ
+
 const apartmentDetails = {
     1: {
         images: [
-            "/img/apartman1.png",
-            "/img/apartman2.png",
-            "/img/apartman3.png",
-            "/img/apartman4.png"
+            "img/apartman1.png",
+            "img/apartman2.png",
+            "img/apartman3.png",
+            "img/apartman4.png"
         ],
         hr: { 
             name: "Apartman Premium", 
@@ -94,10 +94,10 @@ const apartmentDetails = {
     },
     2: {
         images: [
-            "/img/comforthero.png",
-            "/img/comfort2.png",
-            "/img/comfort3.png",
-            "/img/comfort4.png"
+            "img/comforthero.png",
+            "img/comfort2.png",
+            "img/comfort3.png",
+            "img/comfort4.png"
         ],
         hr: { 
             name: "Apartman Comfort", 
@@ -152,9 +152,9 @@ const apartmentDetails = {
 
 let currentLang = 'hr';
 let activeApartmentId = null;
-let currentImageIndex = 0; // СЛЕДИ КОЈА СЛИКА Е АКТИВНА ЗА СТРЕЛКИТЕ
+let currentImageIndex = 0; 
 
-// Смена на јазик
+
 function changeLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
@@ -169,7 +169,6 @@ function changeLanguage(lang) {
     if (activeApartmentId) updateDetailsModalContent(activeApartmentId);
 }
 
-// Пополнување на големиот попап со Галерија и Векторски Икони
 function updateDetailsModalContent(id) {
     const apData = apartmentDetails[id];
     const langData = apData[currentLang];
@@ -177,10 +176,10 @@ function updateDetailsModalContent(id) {
     document.getElementById('modalApName').textContent = langData.name;
     document.getElementById('modalApCapacity').textContent = langData.capacity;
     
-    // Ресетирање на индексот на првата слика при отворање нов апартман
+  
     currentImageIndex = 0; 
     
-    // Поставување на сликите во галеријата
+  
     const mainImg = document.getElementById('modalMainImg');
     mainImg.src = apData.images[0];
     
@@ -190,11 +189,11 @@ function updateDetailsModalContent(id) {
         if(idx === 0) thumb.classList.add('active');
         else thumb.classList.remove('active');
         
-        // Ова осигурува дека малите слички работат правилно на клик
+      
         thumb.onclick = function() { changeModalImage(this, idx); };
     });
 
-    // Редење на услуги со вектори (Сега и двата апартмани ќе ги прикажат новите 6 соодветни икони)
+  
     const servicesGrid = document.getElementById('modalApServices');
     servicesGrid.innerHTML = '';
     langData.services.forEach(srv => {
@@ -205,9 +204,9 @@ function updateDetailsModalContent(id) {
     });
 }
 
-// Контрола на Галеријата во Попапот (Модифицирано за да го ажурира индексот)
+
 function changeModalImage(element, idx) {
-    currentImageIndex = idx; // Го зачувуваме точниот индекс на сликата
+    currentImageIndex = idx; 
     document.querySelectorAll('.modal-gallery .thumb').forEach(t => t.classList.remove('active'));
     element.classList.add('active');
     
@@ -219,7 +218,7 @@ function changeModalImage(element, idx) {
     }, 150);
 }
 
-// --- 2. ЈАЗИЧЕН СЕЛЕКТОР (Со знамиња) ---
+
 const langSelector = document.getElementById('langSelector');
 const langDropdown = document.getElementById('langDropdown');
 const langCurrent = document.getElementById('langCurrent');
@@ -244,7 +243,7 @@ document.querySelectorAll('.lang-option').forEach(option => {
 
 document.addEventListener('click', () => langDropdown.classList.remove('show'));
 
-// --- 3. БУРГЕР МЕНИ ---
+
 const burgerBtn = document.getElementById('burgerBtn');
 const navMenu = document.getElementById('navMenu');
 
@@ -288,14 +287,14 @@ document.querySelectorAll('.modal').forEach(modal => {
 });
 
 
-// --- 5. LIGHTBOX ЗА ЗГОЛЕМУВАЊЕ НА СЛИКИ ---
+
 const lightboxModal = document.getElementById('lightboxModal');
 const lightboxImg = document.getElementById('lightboxImg');
 const modalMainImg = document.getElementById('modalMainImg');
 const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.next-arrow');
 
-// Отворање на Lightbox на клик на главната слика од обичниот попап
+
 modalMainImg.addEventListener('click', () => {
     if (activeApartmentId) {
         const images = apartmentDetails[activeApartmentId].images;
@@ -304,31 +303,31 @@ modalMainImg.addEventListener('click', () => {
     }
 });
 
-// Функција за менување слика (лево / десно) во Lightbox
+
 function navigateLightbox(direction) {
     if (!activeApartmentId) return;
     const images = apartmentDetails[activeApartmentId].images;
     
     if (direction === 'next') {
-        currentImageIndex = (currentImageIndex + 1) % images.length; // оди во круг нанапред
+        currentImageIndex = (currentImageIndex + 1) % images.length; 
     } else if (direction === 'prev') {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // оди во круг наназад
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     }
     
     lightboxImg.src = images[currentImageIndex];
     
-    // Синхронизирај ја сликата и во обичниот попап во позадина
+   
     const thumbs = document.querySelectorAll('.modal-gallery .thumb');
     if(thumbs[currentImageIndex]) {
         changeModalImage(thumbs[currentImageIndex], currentImageIndex);
     }
 }
 
-// Настани за стрелките
+
 nextArrow.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('next'); });
 prevArrow.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('prev'); });
 
-// Поддршка за стрелки од тастатура
+
 document.addEventListener('keydown', (e) => {
     if (lightboxModal.classList.contains('active')) {
         if (e.key === 'ArrowRight') navigateLightbox('next');
@@ -337,12 +336,11 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Затворање на Lightbox на клик на "X" или надвор од сликата
 lightboxModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('lightbox-modal') || e.target.classList.contains('close-lightbox')) {
         lightboxModal.classList.remove('active');
     }
 });
 
-// Иницијализација
+
 changeLanguage('hr');
