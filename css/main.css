@@ -821,6 +821,7 @@ body {
   transform: translateY(0);
 }
 
+/* --- Media Queries --- */
 @media (max-width: 992px) {
   .modal-content.large-modal {
     padding: 3.5rem 1.5rem 2rem 1.5rem;
@@ -864,7 +865,6 @@ body {
     justify-content: center !important;
     align-items: center !important;
     padding: 5rem 0 1.5rem 0 !important;
-    gap: 0 !important;
     z-index: 1100 !important;
     margin: 0 !important;
     transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
@@ -874,39 +874,15 @@ body {
   }
   .navbar .nav-menu a {
     font-size: 1.3rem;
-    font-weight: 700;
-    color: #0f2444;
-    text-align: center;
     padding: 1.2rem 0;
     width: 75%;
-    transition: all 0.25s ease;
-    text-decoration: none !important;
-    position: relative;
-    display: block;
   }
-  .navbar .nav-menu a:not(:last-child) {
-    border-bottom: 2px solid transparent;
-    -o-border-image: linear-gradient(to right, rgba(15, 36, 68, 0) 0%, rgba(15, 36, 68, 0.15) 50%, rgba(15, 36, 68, 0) 100%) 1;
-       border-image: linear-gradient(to right, rgba(15, 36, 68, 0) 0%, rgba(15, 36, 68, 0.15) 50%, rgba(15, 36, 68, 0) 100%) 1;
+  /* Вратени оригинални вредности за Hero */
+  .hero-section .hero-content h1 {
+    font-size: 2.4rem;
   }
-  .navbar .nav-menu a::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #d4af37;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-  .navbar .nav-menu a:hover {
-    color: #d4af37;
-    transform: scale(1.03);
-    text-decoration: none !important;
-  }
-  .navbar .nav-menu a:hover::after {
-    width: 50%;
+  .hero-section .hero-content p {
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 576px) {
@@ -916,7 +892,6 @@ body {
   }
   .navbar .nav-menu a {
     font-size: 1.2rem;
-    padding: 1rem 0;
   }
   .modal {
     padding: 0.5rem;
@@ -925,22 +900,6 @@ body {
     padding: 2.5rem 1rem 1rem 1rem;
     border-radius: 20px;
     max-height: 96vh;
-  }
-  .modal-content.contact-modal {
-    padding: 3rem 1.2rem 1.5rem 1.2rem;
-    border-radius: 20px;
-    max-width: 95%;
-  }
-  .modal-content.contact-modal h3 {
-    font-size: 1.4rem;
-  }
-  .modal-content.contact-modal p {
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-  }
-  .modal-content.contact-modal .contact-link {
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
   }
   .modal-gallery {
     gap: 6px;
@@ -957,20 +916,31 @@ body {
     border-radius: 6px;
     transform: scale(0.9);
   }
+  /* Исправен футер за да не бега содржината */
+  .footer {
+    padding: 3rem 1rem 1.5rem 1rem; /* Додаден страничен padding */
+    width: 100%;
+    box-sizing: border-box; /* Важно за да не излегува надвор */
+  }
+  .footer .footer-grid {
+    gap: 1.5rem;
+  }
+  .footer .footer-info h3 {
+    font-size: 1.5rem;
+  }
+  .footer .footer-map {
+    height: 200px;
+    width: 100%;
+  }
+  .footer .footer-bottom {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
   .modal-info-side {
     gap: 0.8rem;
   }
   .modal-info-side h3 {
     font-size: 1.4rem;
-    margin-top: 0;
-  }
-  .modal-info-side .modal-meta {
-    padding: 0.6rem 0.8rem;
-    border-radius: 10px;
-  }
-  .modal-info-side .services-wrapper h4 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
   }
   .modal-info-side .vector-services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -979,12 +949,10 @@ body {
   .modal-info-side .vector-services-grid .service-item {
     padding: 6px;
     font-size: 0.75rem;
-    border-radius: 6px;
   }
   .modal-info-side #goToBookBtn {
     margin-top: 0.5rem;
     padding: 0.8rem;
-    font-size: 0.9rem;
   }
   .modal-content .close-modal {
     top: 10px !important;
@@ -992,4 +960,14 @@ body {
     width: 32px !important;
     height: 32px !important;
   }
+}
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=main.css.map */

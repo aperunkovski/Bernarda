@@ -892,100 +892,70 @@ body {
 
 
 
+/* --- Media Queries --- */
 
 @media (max-width: 992px) {
-  .modal-content.large-modal {
-    padding: 3.5rem 1.5rem 2rem 1.5rem;
-  }
-
-  .modal-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .modal-gallery {
-    .main-img-container {
-      height: 320px; // Вратена поголема висина
-    }
-  }
+  .modal-content.large-modal { padding: 3.5rem 1.5rem 2rem 1.5rem; }
+  .modal-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .modal-gallery { .main-img-container { height: 320px; } }
 }
 
 @media (max-width: 768px) {
-  // ... (остатокот од медиа кодот останува ист за navbar и footer)
-  
   .navbar {
     .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 5%; }
     .logo { font-size: 1.2rem; z-index: 1200; }
     .burger-btn { display: flex; margin-left: auto; z-index: 1200; }
+    
     .nav-menu {
-      position: fixed !important; top: -100vh !important; left: 0 !important; right: 0 !important; width: 100% !important; height: 40vh !important; background-color: #ffffff !important; box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 5rem 0 1.5rem 0 !important; gap: 0 !important; z-index: 1100 !important; margin: 0 !important; transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
+      position: fixed !important; top: -100vh !important; left: 0 !important; right: 0 !important; width: 100% !important; height: 40vh !important; background-color: #ffffff !important; box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 5rem 0 1.5rem 0 !important; z-index: 1100 !important; margin: 0 !important; transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
       &.active { top: 0 !important; }
-      a { font-size: 1.3rem; font-weight: 700; color: $navy-dark; text-align: center; padding: 1.2rem 0; width: 75%; transition: all 0.25s ease; text-decoration: none !important; position: relative; display: block;
-        &:not(:last-child) { border-bottom: 2px solid transparent; border-image: linear-gradient(to right, rgba($navy-dark, 0) 0%, rgba($navy-dark, 0.15) 50%, rgba($navy-dark, 0) 100%) 1; }
-        &::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 2px; background-color: $sand-gold; transition: all 0.3s ease; transform: translateX(-50%); }
-        &:hover { color: $sand-gold; transform: scale(1.03); text-decoration: none !important; &::after { width: 50%; } }
-      }
+      a { font-size: 1.3rem; padding: 1.2rem 0; width: 75%; }
     }
+  }
+
+  /* Вратени оригинални вредности за Hero */
+  .hero-section .hero-content {
+    h1 { font-size: 2.4rem; }
+    p { font-size: 1.2rem; }
   }
 }
 
 @media (max-width: 576px) {
-  .navbar .nav-menu { height: 42vh !important; padding-top: 4.5rem !important; a { font-size: 1.2rem; padding: 1rem 0; } }
+  .navbar .nav-menu { height: 42vh !important; padding-top: 4.5rem !important; a { font-size: 1.2rem; } }
 
   .modal { padding: 0.5rem; }
-
-  .modal-content.large-modal {
-    padding: 2.5rem 1rem 1rem 1rem;
-    border-radius: 20px;
-    max-height: 96vh;
-  }
-
-  .modal-content.contact-modal {
-    padding: 3rem 1.2rem 1.5rem 1.2rem;
-    border-radius: 20px;
-    max-width: 95%;
-    h3 { font-size: 1.4rem; }
-    p { font-size: 0.8rem; margin-bottom: 1rem; }
-    .contact-link { padding: 0.7rem 1rem; font-size: 0.9rem; }
-  }
-
+  .modal-content.large-modal { padding: 2.5rem 1rem 1rem 1rem; border-radius: 20px; max-height: 96vh; }
   .modal-gallery {
     gap: 6px;
+    .main-img-container { height: 220px; border-radius: 12px; }
+    .thumb-grid { gap: 5px; .thumb { aspect-ratio: 4 / 3; border-radius: 6px; transform: scale(0.9); } }
+  }
 
-    .main-img-container {
-      height: 220px; // Вратена оригиналната висина
-      border-radius: 12px;
-    }
-
-    .thumb-grid {
-      gap: 5px;
-      .thumb { 
-        aspect-ratio: 4 / 3; 
-        border-radius: 6px; 
-        transform: scale(0.9); // Мало намалување на големината на неактивните
-      }
-    }
+  /* Исправен футер за да не бега содржината */
+  .footer {
+    padding: 3rem 1rem 1.5rem 1rem; /* Додаден страничен padding */
+    width: 100%;
+    box-sizing: border-box; /* Важно за да не излегува надвор */
+    
+    .footer-grid { gap: 1.5rem; }
+    .footer-info { h3 { font-size: 1.5rem; } }
+    .footer-map { height: 200px; width: 100%; }
+    .footer-bottom { margin-top: 2rem; font-size: 0.8rem; }
   }
 
   .modal-info-side {
     gap: 0.8rem;
-    h3 { font-size: 1.4rem; margin-top: 0; }
-    .modal-meta { padding: 0.6rem 0.8rem; border-radius: 10px; }
-    .services-wrapper h4 { font-size: 0.9rem; margin-bottom: 0.5rem; }
-
-    .vector-services-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      .service-item { padding: 6px; font-size: 0.75rem; border-radius: 6px; }
-    }
-
-    #goToBookBtn { margin-top: 0.5rem; padding: 0.8rem; font-size: 0.9rem; }
+    h3 { font-size: 1.4rem; }
+    .vector-services-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; .service-item { padding: 6px; font-size: 0.75rem; } }
+    #goToBookBtn { margin-top: 0.5rem; padding: 0.8rem; }
   }
 
-  .modal-content .close-modal {
-    top: 10px !important;
-    right: 10px !important;
-    width: 32px !important;
-    height: 32px !important;
-  }
+  .modal-content .close-modal { top: 10px !important; right: 10px !important; width: 32px !important; height: 32px !important; }
 }
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.scroll-reveal.active { opacity: 1; transform: translateY(0); }
