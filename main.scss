@@ -23,6 +23,16 @@ $viber: #7360F2;
 
 html {
   scroll-behavior: smooth;
+
+
+.fade-in {
+  animation: fadeInAnimation 1s ease-in;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 }
 
 body {
