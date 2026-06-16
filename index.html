@@ -90,46 +90,45 @@
 </section>
 
     <div class="modal" id="detailsModal">
-        <div class="modal-content large-modal">
-            <button class="close-modal">×</button>
-            
-            <div class="modal-grid">
-                <div class="modal-gallery">
-                    <div class="main-img-container">
-                        <img id="modalMainImg" src="" alt="Main View">
-                    </div>
-                    <div class="thumb-grid">
-                        <img class="thumb active" src="" alt="Thumb 1" onclick="changeModalImage(this)">
-                        <img class="thumb" src="" alt="Thumb 2" onclick="changeModalImage(this)">
-                        <img class="thumb" src="" alt="Thumb 3" onclick="changeModalImage(this)">
-                        <img class="thumb" src="" alt="Thumb 4" onclick="changeModalImage(this)">
-                    </div>
+    <div class="modal-content large-modal">
+        <button class="close-modal">×</button>
+        
+        <div class="modal-grid">
+            <div class="modal-gallery">
+                <div class="main-img-container">
+                    <img id="modalMainImg" src="" alt="Main View">
                 </div>
+                <div class="thumb-grid">
+                    <img class="thumb active" src="" alt="Thumb 1">
+                    <img class="thumb" src="" alt="Thumb 2">
+                    <img class="thumb" src="" alt="Thumb 3">
+                    <img class="thumb" src="" alt="Thumb 4">
+                </div>
+            </div>
 
-                <div class="modal-info-side">
-                    <h3 id="modalApName">Ime Apartmana</h3>
-                    
-                    <div class="modal-meta">
-                        <div class="meta-item">
-                            <i class="fa-solid fa-users-viewfinder"></i>
-                            <div>
-                                <span class="meta-label" data-i18n="capacity">Kapacitet</span>
-                                <strong id="modalApCapacity">4 osobe</strong>
-                            </div>
+            <div class="modal-info-side">
+                <h3 id="modalApName">Ime Apartmana</h3>
+                
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                        <div>
+                            <span class="meta-label" data-i18n="capacity">Kapacitet</span>
+                            <strong id="modalApCapacity">4 osobe</strong>
                         </div>
                     </div>
-
-                    <div class="services-wrapper">
-                        <h4 data-i18n="services_label">Usluge i Sadržaji</h4>
-                        <div class="vector-services-grid" id="modalApServices"></div>
-                    </div>
-
-                    <button class="btn btn-primary" id="goToBookBtn" data-i18n="btn_book">Rezerviraj odmah</button>
                 </div>
+
+                <div class="services-wrapper">
+                    <h4 data-i18n="services_label">Usluge i Sadržaji</h4>
+                    <div class="vector-services-grid" id="modalApServices"></div>
+                </div>
+
+                <button class="btn btn-primary" id="goToBookBtn" data-i18n="btn_book">Rezerviraj odmah</button>
             </div>
         </div>
     </div>
-
+</div>
     <div class="modal" id="bookModal">
         <div class="modal-content contact-modal">
             <button class="close-modal">×</button>
