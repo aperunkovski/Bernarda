@@ -117,3 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const hiddenElements = document.querySelectorAll(".scroll-reveal");
   hiddenElements.forEach((el) => observer.observe(el));
 });
+
+
+// Dodaj ovo negdje u svoj skript ispod ostalih event listenera
+document.querySelector('.close-lightbox').addEventListener('click', () => {
+    document.getElementById('lightboxModal').classList.remove('active');
+});
+
+// Opcionalno: Zatvaranje i klikom na pozadinu (izvan slike)
+document.getElementById('lightboxModal').addEventListener('click', (e) => {
+    if (e.target.id === 'lightboxModal') {
+        document.getElementById('lightboxModal').classList.remove('active');
+    }
+});
