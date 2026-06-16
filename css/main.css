@@ -864,7 +864,7 @@ body {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 0 !important;
+    padding: 5rem 0 0.3rem 0 !important;
     z-index: 1100 !important;
     margin: 0 !important;
     transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
@@ -878,10 +878,8 @@ body {
     font-size: 1.3rem;
     padding: 1.2rem 0 !important;
     margin: 0 !important;
-    border-bottom: 1px solid rgba(10, 25, 47, 0.15);
-  }
-  .navbar .nav-menu a:first-child {
-    border-top: 1px solid rgba(10, 25, 47, 0.15);
+    border-bottom: 3px solid rgba(6, 22, 47, 0.05);
+    /* Граница помеѓу линкови */
   }
   .hero-section .hero-content h1 {
     font-size: 2.4rem;
@@ -892,8 +890,8 @@ body {
 }
 @media (max-width: 576px) {
   .navbar .nav-menu {
-    height: auto !important;
-    padding: 5rem 0 1rem 0 !important;
+    height: 42vh !important;
+    padding-top: 4.5rem !important;
   }
   .navbar .nav-menu a {
     font-size: 1.2rem;
@@ -921,7 +919,7 @@ body {
     border-radius: 6px;
     transform: scale(0.9);
   }
-  /* Футер центриран и оптимизиран */
+  /* Футер центриран */
   .footer {
     padding: 3rem 1rem 1.5rem 1rem;
     width: 100%;
