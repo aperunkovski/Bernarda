@@ -25,14 +25,19 @@ html {
   scroll-behavior: smooth;
 
 
-.fade-in {
-  animation: fadeInAnimation 1s ease-in;
-}
+  .fade-in {
+    animation: fadeInAnimation 1s ease-in;
+  }
 
-@keyframes fadeInAnimation {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 body {
@@ -428,7 +433,10 @@ body {
   &.active {
     opacity: 1;
     pointer-events: auto;
-    .modal-content { transform: scale(1); }
+
+    .modal-content {
+      transform: scale(1);
+    }
   }
 
   .modal-content {
@@ -506,12 +514,26 @@ body {
           filter: brightness(1.08);
         }
 
-        &.phone { background: linear-gradient(135deg, $phone 0%, #0056b3 100%); }
-        &.sms { background: linear-gradient(135deg, $sms 0%, #117a8b 100%); }
-        &.whatsapp { background: linear-gradient(135deg, $whatsapp 0%, #1e7e34 100%); }
-        &.viber { background: linear-gradient(135deg, $viber 0%, #5b4cb8 100%); }
-        // Нова боја за Email: Ускладена со брендот
-        &.email { background: linear-gradient(135deg, #3a506b 0%, #1c2541 100%); }
+        &.phone {
+          background: linear-gradient(135deg, $phone 0%, #0056b3 100%);
+        }
+
+        &.sms {
+          background: linear-gradient(135deg, $sms 0%, #117a8b 100%);
+        }
+
+        &.whatsapp {
+          background: linear-gradient(135deg, $whatsapp 0%, #1e7e34 100%);
+        }
+
+        &.viber {
+          background: linear-gradient(135deg, $viber 0%, #5b4cb8 100%);
+        }
+
+       
+        &.email {
+          background: linear-gradient(135deg, #3a506b 0%, #1c2541 100%);
+        }
       }
     }
 
@@ -587,14 +609,21 @@ body {
     }
 
     &:hover {
-      img { transform: scale(1.03); }
-      &::after { opacity: 1; background: $sand-gold; color: $navy-dark; }
+      img {
+        transform: scale(1.03);
+      }
+
+      &::after {
+        opacity: 1;
+        background: $sand-gold;
+        color: $navy-dark;
+      }
     }
   }
 
   .thumb-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 
     .thumb {
@@ -620,7 +649,12 @@ body {
   justify-content: flex-start;
   gap: 1.5rem;
 
-  h3 { font-size: 2rem; font-weight: 800; color: $navy-dark; line-height: 1.2; }
+  h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $navy-dark;
+    line-height: 1.2;
+  }
 
   .modal-meta {
     background: $bg-light;
@@ -632,9 +666,24 @@ body {
       display: flex;
       align-items: center;
       gap: 12px;
-      i { font-size: 1.4rem; color: $sand-gold; }
-      .meta-label { display: block; font-size: 0.75rem; color: #718096; text-transform: uppercase; letter-spacing: 0.5px; }
-      strong { font-size: 1.1rem; color: $navy-dark; }
+
+      i {
+        font-size: 1.4rem;
+        color: $sand-gold;
+      }
+
+      .meta-label {
+        display: block;
+        font-size: 0.75rem;
+        color: #718096;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      strong {
+        font-size: 1.1rem;
+        color: $navy-dark;
+      }
     }
   }
 
@@ -666,7 +715,12 @@ body {
       color: $text-dark;
       border: 1px solid rgba($border-color, 0.5);
 
-      i { font-size: 1.1rem; color: $navy-dark; width: 20px; text-align: center; }
+      i {
+        font-size: 1.1rem;
+        color: $navy-dark;
+        width: 20px;
+        text-align: center;
+      }
     }
   }
 
@@ -727,7 +781,6 @@ body {
         font-size: 1.1rem;
       }
 
-      // Ова овозможува е-маил линкот да го наследи истиот изглед како p елементот
       a {
         color: rgba($white, 0.8);
         text-decoration: none;
@@ -892,65 +945,197 @@ body {
 
 
 
-/* --- Media Queries --- */
+
 
 @media (max-width: 992px) {
-  .modal-content.large-modal { padding: 3.5rem 1.5rem 2rem 1.5rem; }
-  .modal-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .modal-gallery { .main-img-container { height: 320px; } }
+  .modal-content.large-modal {
+    padding: 3.5rem 1.5rem 2rem 1.5rem;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-gallery {
+    .main-img-container {
+      height: 320px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 5%; }
-    .logo { font-size: 1.2rem; z-index: 1200; }
-    .burger-btn { display: flex; margin-left: auto; z-index: 1200; }
-    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 5%;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      z-index: 1200;
+    }
+
+    .burger-btn {
+      display: flex;
+      margin-left: auto;
+      z-index: 1200;
+    }
+
     .nav-menu {
-      position: fixed !important; top: -100vh !important; left: 0 !important; right: 0 !important; width: 100% !important; height: 40vh !important; background-color: #ffffff !important; box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08) !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 5rem 0 1.5rem 0 !important; z-index: 1100 !important; margin: 0 !important; transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
-      &.active { top: 0 !important; }
-      a { font-size: 1.3rem; padding: 1.2rem 0; width: 75%; }
+      position: fixed !important;
+      top: -100vh !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 40vh !important;
+      background-color: #ffffff !important;
+      box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 5rem 0 1.5rem 0 !important;
+      z-index: 1100 !important;
+      margin: 0 !important;
+      transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
+
+      &.active {
+        top: 0 !important;
+      }
+
+      a {
+        font-size: 1.3rem;
+        padding: 1.2rem 0;
+        width: 75%;
+      }
     }
   }
 
-  /* Вратени оригинални вредности за Hero */
   .hero-section .hero-content {
-    h1 { font-size: 2.4rem; }
-    p { font-size: 1.2rem; }
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
 
 @media (max-width: 576px) {
-  .navbar .nav-menu { height: 42vh !important; padding-top: 4.5rem !important; a { font-size: 1.2rem; } }
+  .navbar .nav-menu {
+    height: 42vh !important;
+    padding-top: 4.5rem !important;
 
-  .modal { padding: 0.5rem; }
-  .modal-content.large-modal { padding: 2.5rem 1rem 1rem 1rem; border-radius: 20px; max-height: 96vh; }
-  .modal-gallery {
-    gap: 6px;
-    .main-img-container { height: 220px; border-radius: 12px; }
-    .thumb-grid { gap: 5px; .thumb { aspect-ratio: 4 / 3; border-radius: 6px; transform: scale(0.9); } }
+    a {
+      font-size: 1.2rem;
+    }
   }
 
-  /* Исправен футер за да не бега содржината */
+  .modal {
+    padding: 0.5rem;
+  }
+
+  .modal-content.large-modal {
+    padding: 2.5rem 1rem 1rem 1rem;
+    border-radius: 20px;
+    max-height: 96vh;
+  }
+
+  .modal-gallery {
+    gap: 6px;
+
+    .main-img-container {
+      height: 220px;
+      border-radius: 12px;
+    }
+
+    .thumb-grid {
+      gap: 5px;
+
+      .thumb {
+        aspect-ratio: 4 / 3;
+        border-radius: 6px;
+        transform: scale(0.9);
+      }
+    }
+  }
+
+
   .footer {
-    padding: 3rem 1rem 1.5rem 1rem; /* Додаден страничен padding */
+    padding: 3rem 1rem 1.5rem 1rem;
     width: 100%;
-    box-sizing: border-box; /* Важно за да не излегува надвор */
-    
-    .footer-grid { gap: 1.5rem; }
-    .footer-info { h3 { font-size: 1.5rem; } }
-    .footer-map { height: 200px; width: 100%; }
-    .footer-bottom { margin-top: 2rem; font-size: 0.8rem; }
+    box-sizing: border-box;
+    text-align: center;
+  
+
+    .footer-grid {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    .footer-info {
+      align-items: center;
+
+     
+      p {
+        justify-content: center;
+      }
+
+      span {
+        justify-content: center;
+      }
+    }
+
+    .footer-map {
+      height: 200px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+  
+    .footer-bottom {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+    }
   }
 
   .modal-info-side {
     gap: 0.8rem;
-    h3 { font-size: 1.4rem; }
-    .vector-services-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; .service-item { padding: 6px; font-size: 0.75rem; } }
-    #goToBookBtn { margin-top: 0.5rem; padding: 0.8rem; }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .vector-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+
+      .service-item {
+        padding: 6px;
+        font-size: 0.75rem;
+      }
+    }
+
+    #goToBookBtn {
+      margin-top: 0.5rem;
+      padding: 0.8rem;
+    }
   }
 
-  .modal-content .close-modal { top: 10px !important; right: 10px !important; width: 32px !important; height: 32px !important; }
+  .modal-content .close-modal {
+    top: 10px !important;
+    right: 10px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
 }
 
 .scroll-reveal {
@@ -958,4 +1143,8 @@ body {
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.scroll-reveal.active { opacity: 1; transform: translateY(0); }
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

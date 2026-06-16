@@ -821,7 +821,6 @@ body {
   transform: translateY(0);
 }
 
-/* --- Media Queries --- */
 @media (max-width: 992px) {
   .modal-content.large-modal {
     padding: 3.5rem 1.5rem 2rem 1.5rem;
@@ -877,7 +876,6 @@ body {
     padding: 1.2rem 0;
     width: 75%;
   }
-  /* Вратени оригинални вредности за Hero */
   .hero-section .hero-content h1 {
     font-size: 2.4rem;
   }
@@ -916,21 +914,31 @@ body {
     border-radius: 6px;
     transform: scale(0.9);
   }
-  /* Исправен футер за да не бега содржината */
   .footer {
-    padding: 3rem 1rem 1.5rem 1rem; /* Додаден страничен padding */
+    padding: 3rem 1rem 1.5rem 1rem;
     width: 100%;
-    box-sizing: border-box; /* Важно за да не излегува надвор */
+    box-sizing: border-box;
+    text-align: center;
   }
   .footer .footer-grid {
-    gap: 1.5rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .footer .footer-info h3 {
-    font-size: 1.5rem;
+  .footer .footer-info {
+    align-items: center;
+  }
+  .footer .footer-info p {
+    justify-content: center;
+  }
+  .footer .footer-info span {
+    justify-content: center;
   }
   .footer .footer-map {
     height: 200px;
     width: 100%;
+    max-width: 400px;
   }
   .footer .footer-bottom {
     margin-top: 2rem;
