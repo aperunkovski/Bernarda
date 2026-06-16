@@ -864,7 +864,7 @@ body {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 5rem 0 0.3rem 0 !important;
+    padding: 0 !important;
     z-index: 1100 !important;
     margin: 0 !important;
     transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
@@ -874,12 +874,17 @@ body {
   }
   .navbar .nav-menu a {
     width: 100% !important;
-    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 70px !important;
     font-size: 1.3rem;
-    padding: 1.2rem 0 !important;
     margin: 0 !important;
-    border-bottom: 3px solid rgba(6, 22, 47, 0.05);
-    /* Граница помеѓу линкови */
+    padding: 0 !important;
+    border-bottom: 2px solid rgba(10, 25, 47, 0.1);
+  }
+  .navbar .nav-menu a:first-child {
+    border-top: 2px solid rgba(10, 25, 47, 0.1);
   }
   .hero-section .hero-content h1 {
     font-size: 2.4rem;
@@ -890,19 +895,21 @@ body {
 }
 @media (max-width: 576px) {
   .navbar .nav-menu {
-    height: 42vh !important;
-    padding-top: 4.5rem !important;
+    height: auto !important;
+    padding-top: 4rem !important;
   }
   .navbar .nav-menu a {
     font-size: 1.2rem;
+    height: 60px !important;
   }
   .modal {
     padding: 0.5rem;
   }
   .modal-content.large-modal {
-    padding: 2.5rem 1rem 1rem 1rem;
+    padding: 3.5rem 1rem 1rem 1rem; /* Повеќе простор одозгора за close копчето */
     border-radius: 20px;
     max-height: 96vh;
+    position: relative;
   }
   .modal-gallery {
     gap: 6px;
@@ -918,6 +925,14 @@ body {
     aspect-ratio: 4/3;
     border-radius: 6px;
     transform: scale(0.9);
+  }
+  /* Исправка за Close копчето да не се удира во сликата */
+  .modal-content .close-modal {
+    top: 15px !important;
+    right: 15px !important;
+    width: 36px !important;
+    height: 36px !important;
+    background: rgba(0, 0, 0, 0.05); /* Лесен фон за подобра видливост */
   }
   /* Футер центриран */
   .footer {
@@ -964,12 +979,6 @@ body {
   .modal-info-side #goToBookBtn {
     margin-top: 0.5rem;
     padding: 0.8rem;
-  }
-  .modal-content .close-modal {
-    top: 10px !important;
-    right: 10px !important;
-    width: 32px !important;
-    height: 32px !important;
   }
 }
 .scroll-reveal {
