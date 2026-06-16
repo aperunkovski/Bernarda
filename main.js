@@ -1,6 +1,6 @@
 const translations = {
     hr: { nav_home: "Početna", nav_apartments: "Apartmani", nav_contact: "Kontakt", hero_title: "Dobrodošli u Apartmane Bernarda", hero_subtitle: "Vaš savršen odmor na jadranskoj obali", hero_btn: "Pogledajte Apartmane", ap_section_title: "Naši Apartmani", capacity: "Kapacitet", persons: "osobe", btn_view: "Pregledaj", btn_book: "Rezerviraj odmah", services_label: "Usluge i Sadržaji", book_title: "Rezervirajte Vaš Boravak", book_subtitle: "Odaberite način na koji želite stupiti u kontakt s nama:", badge_recommended: "Preporučeno" },
-    en: { nav_home: "Home", nav_apartments: "Apartments", nav_contact: "Contact", hero_title: "Welcome to Apartments Bernarda", hero_subtitle: "Your perfect vacation on the Adriatic coast", hero_btn: "View Apartments", ap_section_title: "Our Apartments", capacity: "Capacity", persons: "people", btn_view: "View Details", btn_book: "Book Now", services_label: "Services & Amenities", book_title: "Book Your Stay", book_subtitle: "Choose your preferred way to contact us:", badge_recommended: "Recommended" },
+    en: { nav_home: "Home", nav_apartments: "Apartments", nav_contact: "Contact", hero_title: "Welcome to Apartm Bernarda", hero_subtitle: "Your perfect vacation on the Adriatic coast", hero_btn: "View Apartments", ap_section_title: "Our Apartments", capacity: "Capacity", persons: "people", btn_view: "View Details", btn_book: "Book Now", services_label: "Services & Amenities", book_title: "Book Your Stay", book_subtitle: "Choose your preferred way to contact us:", badge_recommended: "Recommended" },
     it: { nav_home: "Home", nav_apartments: "Appartamenti", nav_contact: "Contatto", hero_title: "Benvenuti a Apartmani Bernarda", hero_subtitle: "La tua vacanza perfetta sulla costa adriatica", hero_btn: "Vedi Appartamenti", ap_section_title: "I Nostri Appartamenti", capacity: "Capacità", persons: "persone", btn_view: "Visualizza", btn_book: "Prenota Ora", services_label: "Servizi e Comfort", book_title: "Prenota il Tuo Soggiorno", book_subtitle: "Scegli il modo che preferisci per contattarci:", badge_recommended: "Consigliato" },
     de: { nav_home: "Startseite", nav_apartments: "Ferienwohnungen", nav_contact: "Kontakt", hero_title: "Willkommen im Apartmani Bernarda", hero_subtitle: "Ihr perfekter Urlaub an der Adriaküste", hero_btn: "Ferienwohnungen Ansehen", ap_section_title: "Unsere Ferienwohnungen", capacity: "Kapazität", persons: "Personen", btn_view: "Details Ansehen", btn_book: "Jetzt Buchen", services_label: "Ausstattung", book_title: "Buchen Sie Ihren Aufenthalt", book_subtitle: "Wählen Sie, wie Sie nos kontaktieren möchten:", badge_recommended: "Empfohlen" }
 };
@@ -117,14 +117,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const hiddenElements = document.querySelectorAll(".scroll-reveal");
   hiddenElements.forEach((el) => observer.observe(el));
 });
-// Dodaj ovo negdje u svoj skript ispod ostalih event listenera
-document.querySelector('.close-lightbox').addEventListener('click', () => {
-    document.getElementById('lightboxModal').classList.remove('active');
-});
 
-// Opcionalno: Zatvaranje i klikom na pozadinu (izvan slike)
-document.getElementById('lightboxModal').addEventListener('click', (e) => {
-    if (e.target.id === 'lightboxModal') {
-        document.getElementById('lightboxModal').classList.remove('active');
+
+
+
+
+// Ovo će slušati bilo koji klik u dokumentu
+document.addEventListener('click', (e) => {
+    // Ako kliknuti element ima klasu za zatvaranje
+    if (e.target.classList.contains('close-modal') || 
+        e.target.classList.contains('close-lightbox')) {
+        
+        // Nađi najbliži roditeljski element koji ima klasu 'modal' ili 'lightbox-modal'
+        const modal = e.target.closest('.modal') || e.target.closest('.lightbox-modal');
+        
+        if (modal) {
+            modal.classList.remove('active');
+            
+            // Ako zatvaramo detalje, resetiraj ID
+            if (modal.id === 'detailsModal') {
+                activeApartmentId = null;
+            }
+        }
     }
 });
