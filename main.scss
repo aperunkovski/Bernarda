@@ -1,3 +1,4 @@
+$navy-dark: #0f2444;
 
 $sand-gold: #d4af37;     
 $coral-accent: #f26a4f;   
@@ -69,7 +70,6 @@ body {
   }
 }
 
-
 .navbar {
   position: fixed;
   top: 0;
@@ -126,7 +126,6 @@ body {
     flex-shrink: 0; 
   }
 }
-
 
 .custom-lang-selector {
   position: relative;
@@ -704,7 +703,17 @@ body {
 .prev-arrow { left: 20px; } .next-arrow { right: 20px; }
 
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px); 
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0); 
+}
 
 @media (max-width: 992px) {
   .modal-content.large-modal { padding: 3.5rem 1.5rem 2rem 1.5rem; }

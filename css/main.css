@@ -35,20 +35,20 @@ body {
 }
 .btn-primary {
   background-color: #d4af37;
-  color: #0a192f;
+  color: #0f2444;
 }
 .btn-primary:hover {
-  background-color: #0a192f;
+  background-color: #0f2444;
   color: #d4af37;
   transform: translateY(-2px);
 }
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid #0a192f;
-  color: #0a192f;
+  border: 2px solid #0f2444;
+  color: #0f2444;
 }
 .btn-secondary:hover {
-  background-color: #0a192f;
+  background-color: #0f2444;
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -76,7 +76,7 @@ body {
 .navbar .logo {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #0a192f;
+  color: #0f2444;
   text-decoration: none;
   letter-spacing: -0.5px;
   white-space: nowrap;
@@ -126,7 +126,7 @@ body {
   border: 1px solid #e2e8f0;
   font-weight: 700;
   font-size: 0.85rem;
-  color: #0a192f;
+  color: #0f2444;
 }
 .custom-lang-selector .lang-selected img {
   border-radius: 2px;
@@ -187,7 +187,7 @@ body {
 .burger-btn .line {
   width: 18px;
   height: 2px;
-  background-color: #0a192f;
+  background-color: #0f2444;
   transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
 .burger-btn.active {
@@ -195,7 +195,7 @@ body {
   border-color: #d4af37;
 }
 .burger-btn.active .line {
-  background-color: #0a192f;
+  background-color: #0f2444;
 }
 .burger-btn.active .line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -242,7 +242,7 @@ body {
   text-align: center;
   font-size: 2.6rem;
   font-weight: 800;
-  color: #0a192f;
+  color: #0f2444;
   margin-bottom: 4rem;
 }
 .apartments-section .section-title::after {
@@ -282,7 +282,7 @@ body {
   position: absolute;
   top: 0;
   left: 20px;
-  background: linear-gradient(135deg, #0f2444 0%, #0a192f 100%);
+  background: linear-gradient(135deg, #0f2444 0%, #0f2444 100%);
   color: #d4af37;
   font-weight: 800;
   font-size: 0.7rem;
@@ -308,7 +308,7 @@ body {
 }
 .apartments-section .apartment-card .card-body h3 {
   font-size: 1.5rem;
-  color: #0a192f;
+  color: #0f2444;
   margin-bottom: 0.6rem;
 }
 .apartments-section .apartment-card .card-body .capacity {
@@ -346,7 +346,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 25, 47, 0.8);
+  background-color: rgba(15, 36, 68, 0.8);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -389,7 +389,7 @@ body {
 .modal .modal-content.contact-modal h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #0a192f;
+  color: #0f2444;
   margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
 }
@@ -459,7 +459,7 @@ body {
   border-radius: 50%;
   font-size: 1.1rem;
   cursor: pointer;
-  color: #0a192f;
+  color: #0f2444;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,7 +467,7 @@ body {
   z-index: 1200;
 }
 .modal .modal-content .close-modal:hover {
-  background: #0a192f;
+  background: #0f2444;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -505,7 +505,7 @@ body {
   position: absolute;
   bottom: 15px;
   right: 15px;
-  background: rgba(10, 25, 47, 0.75);
+  background: rgba(15, 36, 68, 0.75);
   color: #ffffff;
   padding: 6px 14px;
   border-radius: 30px;
@@ -522,7 +522,7 @@ body {
 .modal-gallery .main-img-container:hover::after {
   opacity: 1;
   background: #d4af37;
-  color: #0a192f;
+  color: #0f2444;
 }
 .modal-gallery .thumb-grid {
   display: grid;
@@ -553,7 +553,7 @@ body {
 .modal-info-side h3 {
   font-size: 2rem;
   font-weight: 800;
-  color: #0a192f;
+  color: #0f2444;
   line-height: 1.2;
 }
 .modal-info-side .modal-meta {
@@ -580,11 +580,11 @@ body {
 }
 .modal-info-side .modal-meta .meta-item strong {
   font-size: 1.1rem;
-  color: #0a192f;
+  color: #0f2444;
 }
 .modal-info-side .services-wrapper h4 {
   font-size: 1.1rem;
-  color: #0a192f;
+  color: #0f2444;
   margin-bottom: 1rem;
   border-left: 3px solid #d4af37;
   padding-left: 10px;
@@ -609,7 +609,7 @@ body {
 }
 .modal-info-side .vector-services-grid .service-item i {
   font-size: 1.1rem;
-  color: #0a192f;
+  color: #0f2444;
   width: 20px;
   text-align: center;
 }
@@ -620,7 +620,7 @@ body {
 }
 
 .footer {
-  background-color: #0a192f;
+  background-color: #0f2444;
   color: #ffffff;
   padding: 4rem 0 2rem 0;
   border-top: 1px solid rgba(226, 232, 240, 0.1);
@@ -723,7 +723,6 @@ body {
   text-decoration: none !important;
 }
 
-/* Lightbox */
 .lightbox-modal {
   display: none;
   position: fixed;
@@ -792,6 +791,17 @@ body {
   right: 20px;
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 992px) {
   .modal-content.large-modal {
     padding: 3.5rem 1.5rem 2rem 1.5rem;
@@ -846,7 +856,7 @@ body {
   .navbar .nav-menu a {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #0a192f;
+    color: #0f2444;
     text-align: center;
     padding: 1.2rem 0;
     width: 75%;
@@ -857,8 +867,8 @@ body {
   }
   .navbar .nav-menu a:not(:last-child) {
     border-bottom: 2px solid transparent;
-    -o-border-image: linear-gradient(to right, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.15) 50%, rgba(10, 25, 47, 0) 100%) 1;
-       border-image: linear-gradient(to right, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.15) 50%, rgba(10, 25, 47, 0) 100%) 1;
+    -o-border-image: linear-gradient(to right, rgba(15, 36, 68, 0) 0%, rgba(15, 36, 68, 0.15) 50%, rgba(15, 36, 68, 0) 100%) 1;
+       border-image: linear-gradient(to right, rgba(15, 36, 68, 0) 0%, rgba(15, 36, 68, 0.15) 50%, rgba(15, 36, 68, 0) 100%) 1;
   }
   .navbar .nav-menu a::after {
     content: "";

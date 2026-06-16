@@ -95,3 +95,25 @@ function navigateLightbox(dir) {
 document.querySelector('.next-arrow').addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('next'); });
 document.querySelector('.prev-arrow').addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('prev'); });
 changeLanguage('hr');
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1 // Се активира кога 10% од елементот ќе биде видлив
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // Престанува да го следи откако ќе се појави
+      }
+    });
+  }, observerOptions);
+
+  // Избери ги сите картички/секции што сакаш да се анимираат
+  const hiddenElements = document.querySelectorAll(".scroll-reveal");
+  hiddenElements.forEach((el) => observer.observe(el));
+});
