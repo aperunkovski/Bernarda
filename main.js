@@ -6,8 +6,8 @@ const translations = {
 };
 
 const apartmentDetails = {
-    1: { images: ["img/apartman1.png", "img/apartman2.png", "img/apartman3.png", "img/apartman4.png"], hr: { name: "Apartman Premium", capacity: "4 osobe", services: [{text: "Besplatan Wi-Fi", icon: "fa-wifi"}, {text: "Klima uređaj", icon: "fa-snowflake"}, {text: "Terasa", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Perilica rublja", icon: "fa-soap"}, {text: "300m od plaže", icon: "fa-water"}] }, en: { name: "Premium Apartment", capacity: "4 people", services: [{text: "Free Wi-Fi", icon: "fa-wifi"}, {text: "Air Conditioning", icon: "fa-snowflake"}, {text: "Terrace", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Washing machine", icon: "fa-soap"}, {text: "300m from beach", icon: "fa-water"}] }, it: { name: "Appartamento Premium", capacity: "4 persone", services: [{text: "Wi-Fi gratuito", icon: "fa-wifi"}, {text: "Aria condizionata", icon: "fa-snowflake"}, {text: "Terrazza", icon: "fa-umbrella-beach"}, {text: "Parcheggio", icon: "fa-car"}, {text: "Lavatrice", icon: "fa-soap"}, {text: "300m dalla spiaggia", icon: "fa-water"}] }, de: { name: "Premium Ferienwohnung", capacity: "4 Personen", services: [{text: "Kostenloses WLAN", icon: "fa-wifi"}, {text: "Klimaanlage", icon: "fa-snowflake"}, {text: "Terrasse", icon: "fa-umbrella-beach"}, {text: "Parkplatz", icon: "fa-car"}, {text: "Waschmaschine", icon: "fa-soap"}, {text: "300m vom Strand", icon: "fa-water"}] } },
-    2: { images: ["img/comforthero.png", "img/comfort2.png", "img/comfort3.png", "img/comfort4.png"], hr: { name: "Apartman Comfort", capacity: "2 osobe", services: [{text: "Besplatan Wi-Fi", icon: "fa-wifi"}, {text: "Klima uređaj", icon: "fa-snowflake"}, {text: "Terasa", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Perilica rublja", icon: "fa-soap"}, {text: "300m od plaže", icon: "fa-water"}] }, en: { name: "Comfort Apartment", capacity: "2 people", services: [{text: "Free Wi-Fi", icon: "fa-wifi"}, {text: "Air Conditioning", icon: "fa-snowflake"}, {text: "Terrace", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Washing machine", icon: "fa-soap"}, {text: "300m from beach", icon: "fa-water"}] }, it: { name: "Appartamento Comfort", capacity: "2 persone", services: [{text: "Wi-Fi gratuito", icon: "fa-wifi"}, {text: "Aria condizionata", icon: "fa-snowflake"}, {text: "Terrazza", icon: "fa-umbrella-beach"}, {text: "Parcheggio", icon: "fa-car"}, {text: "Lavatrice", icon: "fa-soap"}, {text: "300m dalla spiaggia", icon: "fa-water"}] }, de: { name: "Comfort Ferienwohnung", capacity: "2 Personen", services: [{text: "Kostenloses WLAN", icon: "fa-wifi"}, {text: "Klimaanlage", icon: "fa-snowflake"}, {text: "Terrasse", icon: "fa-umbrella-beach"}, {text: "Parkplatz", icon: "fa-car"}, {text: "Waschmaschine", icon: "fa-soap"}, {text: "300m vom Strand", icon: "fa-water"}] } }
+    1: { images: ["img/premium1.png", "img/premium2.png", "img/premium3.jpeg", "img/premium4.png", "img/premium5.jpeg", "img/premium6.png"], hr: { name: "Apartman Premium", capacity: "4 osobe ( 2 + 2 ) ", services: [{text: "Besplatan Wi-Fi", icon: "fa-wifi"}, {text: "Klima uređaj", icon: "fa-snowflake"}, {text: "Terasa", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Perilica rublja", icon: "fa-soap"}, {text: "300m od plaže", icon: "fa-water"}] }, en: { name: "Premium Apartment", capacity: "4 people", services: [{text: "Free Wi-Fi", icon: "fa-wifi"}, {text: "Air Conditioning", icon: "fa-snowflake"}, {text: "Terrace", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Washing machine", icon: "fa-soap"}, {text: "300m from beach", icon: "fa-water"}] }, it: { name: "Appartamento Premium", capacity: "4 persone", services: [{text: "Wi-Fi gratuito", icon: "fa-wifi"}, {text: "Aria condizionata", icon: "fa-snowflake"}, {text: "Terrazza", icon: "fa-umbrella-beach"}, {text: "Parcheggio", icon: "fa-car"}, {text: "Lavatrice", icon: "fa-soap"}, {text: "300m dalla spiaggia", icon: "fa-water"}] }, de: { name: "Premium Ferienwohnung", capacity: "4 Personen", services: [{text: "Kostenloses WLAN", icon: "fa-wifi"}, {text: "Klimaanlage", icon: "fa-snowflake"}, {text: "Terrasse", icon: "fa-umbrella-beach"}, {text: "Parkplatz", icon: "fa-car"}, {text: "Waschmaschine", icon: "fa-soap"}, {text: "300m vom Strand", icon: "fa-water"}] } },
+    2: { images: ["img/comfort1.png", "img/comfort2.png", "img/comfort3.png", "img/comfort4.png", "img/premium6.png.png", "img/both6.png"], hr: { name: "Apartman Comfort", capacity: "3  osobe ( 2 + 1 ) ", services: [{text: "Besplatan Wi-Fi", icon: "fa-wifi"}, {text: "Klima uređaj", icon: "fa-snowflake"}, {text: "Terasa", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Perilica rublja", icon: "fa-soap"}, {text: "300m od plaže", icon: "fa-water"}] }, en: { name: "Comfort Apartment", capacity: "2 people", services: [{text: "Free Wi-Fi", icon: "fa-wifi"}, {text: "Air Conditioning", icon: "fa-snowflake"}, {text: "Terrace", icon: "fa-umbrella-beach"}, {text: "Parking", icon: "fa-car"}, {text: "Washing machine", icon: "fa-soap"}, {text: "300m from beach", icon: "fa-water"}] }, it: { name: "Appartamento Comfort", capacity: "2 persone", services: [{text: "Wi-Fi gratuito", icon: "fa-wifi"}, {text: "Aria condizionata", icon: "fa-snowflake"}, {text: "Terrazza", icon: "fa-umbrella-beach"}, {text: "Parcheggio", icon: "fa-car"}, {text: "Lavatrice", icon: "fa-soap"}, {text: "300m dalla spiaggia", icon: "fa-water"}] }, de: { name: "Comfort Ferienwohnung", capacity: "2 Personen", services: [{text: "Kostenloses WLAN", icon: "fa-wifi"}, {text: "Klimaanlage", icon: "fa-snowflake"}, {text: "Terrasse", icon: "fa-umbrella-beach"}, {text: "Parkplatz", icon: "fa-car"}, {text: "Waschmaschine", icon: "fa-soap"}, {text: "300m vom Strand", icon: "fa-water"}] } }
 };
 
 let currentLang = 'hr';
@@ -31,12 +31,19 @@ function updateDetailsModalContent(id) {
     document.getElementById('modalApCapacity').textContent = langData.capacity;
     currentImageIndex = 0; 
     document.getElementById('modalMainImg').src = apData.images[0];
+    
     const thumbs = document.querySelectorAll('.modal-gallery .thumb');
     thumbs.forEach((thumb, idx) => {
-        thumb.src = apData.images[idx];
+        if(apData.images[idx]) {
+            thumb.src = apData.images[idx];
+            thumb.style.display = 'block'; // Осигури видливост
+        } else {
+            thumb.style.display = 'none'; // Сокриј ако нема слика
+        }
         thumb.classList.toggle('active', idx === 0);
         thumb.onclick = () => changeModalImage(thumb, idx);
     });
+    
     const servicesGrid = document.getElementById('modalApServices');
     servicesGrid.innerHTML = '';
     langData.services.forEach(srv => {
@@ -92,52 +99,32 @@ function navigateLightbox(dir) {
     if(thumbs[currentImageIndex]) changeModalImage(thumbs[currentImageIndex], currentImageIndex);
 }
 
-document.querySelector('.next-arrow').addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('next'); });
-document.querySelector('.prev-arrow').addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('prev'); });
+// Поправени селектори за lightbox стрелки (користи ги тие што ги имаш во HTML)
+document.querySelector('.next-arrow')?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('next'); });
+document.querySelector('.prev-arrow')?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('prev'); });
+
 changeLanguage('hr');
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  const observerOptions = {
-    threshold: 0.1 // Се активира кога 10% од елементот ќе биде видлив
-  };
-
+  const observerOptions = { threshold: 0.1 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        observer.unobserve(entry.target); // Престанува да го следи откако ќе се појави
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-
-  // Избери ги сите картички/секции што сакаш да се анимираат
   const hiddenElements = document.querySelectorAll(".scroll-reveal");
   hiddenElements.forEach((el) => observer.observe(el));
 });
 
-
-
-
-
-// Ovo će slušati bilo koji klik u dokumentu
 document.addEventListener('click', (e) => {
-    // Ako kliknuti element ima klasu za zatvaranje
-    if (e.target.classList.contains('close-modal') || 
-        e.target.classList.contains('close-lightbox')) {
-        
-        // Nađi najbliži roditeljski element koji ima klasu 'modal' ili 'lightbox-modal'
+    if (e.target.classList.contains('close-modal') || e.target.classList.contains('close-lightbox')) {
         const modal = e.target.closest('.modal') || e.target.closest('.lightbox-modal');
-        
         if (modal) {
             modal.classList.remove('active');
-            
-            // Ako zatvaramo detalje, resetiraj ID
-            if (modal.id === 'detailsModal') {
-                activeApartmentId = null;
-            }
+            if (modal.id === 'detailsModal') activeApartmentId = null;
         }
     }
 });
