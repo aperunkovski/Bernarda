@@ -905,7 +905,6 @@ body {
   }
   .modal-content.large-modal {
     padding: 3.5rem 1rem 1rem 1rem;
-    /* Повеќе простор одозгора за close копчето */
     border-radius: 20px;
     max-height: 96vh;
     position: relative;
@@ -925,16 +924,13 @@ body {
     border-radius: 6px;
     transform: scale(0.9);
   }
-  /* Исправка за Close копчето да не се удира во сликата */
   .modal-content .close-modal {
     top: 15px !important;
     right: 15px !important;
     width: 36px !important;
     height: 36px !important;
     background: rgba(0, 0, 0, 0.05);
-    /* Лесен фон за подобра видливост */
   }
-  /* Футер центриран */
   .footer {
     padding: 3rem 1rem 1.5rem 1rem;
     width: 100%;
