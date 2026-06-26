@@ -864,8 +864,6 @@ body {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 0 !important;
-    z-index: 1100 !important;
     margin: 0 !important;
     transition: top 0.4s cubic-bezier(0.1, 1, 0.1, 1) !important;
   }
@@ -906,7 +904,8 @@ body {
     padding: 0.5rem;
   }
   .modal-content.large-modal {
-    padding: 3.5rem 1rem 1rem 1rem; /* Повеќе простор одозгора за close копчето */
+    padding: 3.5rem 1rem 1rem 1rem;
+    /* Повеќе простор одозгора за close копчето */
     border-radius: 20px;
     max-height: 96vh;
     position: relative;
@@ -932,7 +931,8 @@ body {
     right: 15px !important;
     width: 36px !important;
     height: 36px !important;
-    background: rgba(0, 0, 0, 0.05); /* Лесен фон за подобра видливост */
+    background: rgba(0, 0, 0, 0.05);
+    /* Лесен фон за подобра видливост */
   }
   /* Футер центриран */
   .footer {
