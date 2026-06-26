@@ -732,6 +732,9 @@ body {
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
+.footer .footer-bottom span {
+  font-size: 0.7rem;
+}
 .footer .footer-bottom .designer-link {
   color: #d4af37;
   text-decoration: none !important;
