@@ -263,8 +263,11 @@ body {
 
 .hero-section {
   height: 100vh;
+  // DODANO: Gradijent i slika prebačeni iz HTML-a (putanja prilagođena za CSS mapu)
+  background-image: linear-gradient(rgba(10, 25, 47, 0.55), rgba(10, 25, 47, 0.55)), url('../img/Krk_krk.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

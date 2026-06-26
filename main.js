@@ -14,13 +14,24 @@ let currentLang = 'hr';
 let activeApartmentId = null;
 let currentImageIndex = 0; 
 
+// RIJEŠEN PROBLEM SA ZASTAVICAMA UNUTAR OVE FUNKCIJE
 function changeLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = lang;
+    
+    // 1. Prijevodi svih elemenata s data-i18n atributom
     document.querySelectorAll('[data-i18n]').forEach(elem => {
         const key = elem.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) elem.textContent = translations[lang][key];
     });
+
+    // 2. Dinamičko ažuriranje glavne zastavice i teksta u selektoru (langCurrent)
+    const flagMap = { hr: 'hr', en: 'gb', it: 'it', de: 'de' };
+    const langCurrent = document.getElementById('langCurrent');
+    if (langCurrent) {
+        langCurrent.innerHTML = `<img src="https://flagcdn.com/w20/${flagMap[lang]}.png" alt="${lang.toUpperCase()}"> <span>${lang.toUpperCase()}</span> <i class="fa-solid fa-chevron-down"></i>`;
+    }
+
     if (activeApartmentId) updateDetailsModalContent(activeApartmentId);
 }
 
@@ -65,12 +76,14 @@ function changeModalImage(element, idx) {
 
 // Event Listeners...
 document.getElementById('langSelector').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('langDropdown').classList.toggle('show'); });
+
 document.querySelectorAll('.lang-option').forEach(option => {
     option.addEventListener('click', () => {
         changeLanguage(option.getAttribute('data-value'));
         document.getElementById('langDropdown').classList.remove('show');
     });
 });
+
 document.addEventListener('click', () => document.getElementById('langDropdown').classList.remove('show'));
 document.getElementById('burgerBtn').addEventListener('click', () => { document.getElementById('burgerBtn').classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active'); });
 
@@ -99,10 +112,11 @@ function navigateLightbox(dir) {
     if(thumbs[currentImageIndex]) changeModalImage(thumbs[currentImageIndex], currentImageIndex);
 }
 
-// Поправени селектори за lightbox стрелки (користи ги тие што ги имаш во HTML)
+// Поправени селектори за lightbox стрелки (користи ги тие што ги imaš во HTML)
 document.querySelector('.next-arrow')?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('next'); });
 document.querySelector('.prev-arrow')?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox('prev'); });
 
+// Inicijalno postavljanje jezika
 changeLanguage('hr');
 
 document.addEventListener("DOMContentLoaded", () => {
